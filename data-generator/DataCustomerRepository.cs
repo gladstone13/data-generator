@@ -12,13 +12,16 @@ namespace data_generator
                 folderAndFileName = $"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}/data_customer_file.csv";
             }
 
-            using StreamWriter streamWriter = new(folderAndFileName);
-
-            foreach (DataCustomerModel customer in customers)
+            var count = 0;
+            using (StreamWriter streamWriter = new(folderAndFileName))
             {
-                streamWriter.WriteLineAsync($"{customer.Id}|{customer.Name}|{customer.Email}");
-            }
-
+                foreach (DataCustomerModel customer in customers)
+                {
+                    Thread.Sleep(8);
+                    streamWriter.WriteLineAsync($"{customer.Id}|{customer.Name}|{customer.Email}");
+                    count++;
+                }
+            };
         }
     }
 }
