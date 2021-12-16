@@ -1,11 +1,10 @@
-﻿using System.IO;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace data_generator
 {
     public class DataCustomerRepository
     {
-        public void SaveDataInFile(List<DataCustomerModel> customers, string folderAndFileName)
+        public void SaveDataInFile(List<DataCustomerModel> customers, string folderAndFileName = "c:/temp/data_customer_file.csv")
         {
             if (String.IsNullOrEmpty(folderAndFileName))
             {
@@ -13,12 +12,16 @@ namespace data_generator
             }
 
             var count = 0;
-            using (StreamWriter streamWriter = new(folderAndFileName))
+            var updateDataFile = true;
+            var encoding = new UTF8Encoding(false, true);
+            var bufferSize = 65536; //64k buffer - The default size is 1k
+
+            using (StreamWriter streamWriter = new (folderAndFileName, updateDataFile, encoding, bufferSize))
             {
                 foreach (DataCustomerModel customer in customers)
                 {
-                    Thread.Sleep(8);
-                    streamWriter.WriteLineAsync($"{customer.Id}|{customer.Name}|{customer.Email}");
+                    //Thread.Sleep(10);
+                    streamWriter.WriteLine($"{customer.Id}|{customer.Name}|{customer.Email}");
                     count++;
                 }
             };

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data-generator", "data-generator.csproj", "{56A72CDB-ACC0-469A-ACD2-AA683DB606DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data-generator", "data-generator.csproj", "{56A72CDB-ACC0-469A-ACD2-AA683DB606DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data-ingestion", "..\data-ingestion\data-ingestion.csproj", "{19B3258D-194B-4E63-8253-6DDF356403A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{56A72CDB-ACC0-469A-ACD2-AA683DB606DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56A72CDB-ACC0-469A-ACD2-AA683DB606DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56A72CDB-ACC0-469A-ACD2-AA683DB606DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B3258D-194B-4E63-8253-6DDF356403A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B3258D-194B-4E63-8253-6DDF356403A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B3258D-194B-4E63-8253-6DDF356403A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B3258D-194B-4E63-8253-6DDF356403A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

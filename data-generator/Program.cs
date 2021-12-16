@@ -6,7 +6,7 @@ Console.WriteLine("*************************************************************
 var informationGenerator = new InformationGenerator();
 var dataCustomerRepository = new DataCustomerRepository();
 
-var numberOfRows = 1000000;
+var numberOfRows = 10000000;
 
 var customerList = informationGenerator.GenerateCustomerInformation(numberOfRows);
 dataCustomerRepository.SaveDataInFile(customerList, "c:/temp/data_customer_file.csv");
